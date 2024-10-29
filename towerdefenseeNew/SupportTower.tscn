@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://o4schf7kdewo"]
+
+[ext_resource type="Texture2D" uid="uid://dd21kp7a5igh1" path="res://entity/buildings/afsdfaaf.png" id="1_nv4r0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ceudx"]
+size = Vector2(43, 54.25)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qbudr"]
+radius = 149.003
+
+[node name="StaticBody2D" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 26.5)
+shape = SubResource("RectangleShape2D_ceudx")
+
+[node name="Home1" type="Sprite2D" parent="."]
+texture = ExtResource("1_nv4r0")
+
+[node name="Range" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Range"]
+shape = SubResource("CircleShape2D_qbudr")

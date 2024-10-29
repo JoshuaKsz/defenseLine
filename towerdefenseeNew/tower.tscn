@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://wrcpfasslhbo"]
+
+[ext_resource type="Script" path="res://tower.gd" id="1_vu63x"]
+[ext_resource type="Texture2D" uid="uid://bepnntqhnc2hm" path="res://entity/buildings/eewerrwerw.png" id="2_18hb2"]
+
+[node name="Tower" type="Panel"]
+custom_minimum_size = Vector2(80, 80)
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_vu63x")
+
+[node name="Eewerrwerw" type="Sprite2D" parent="."]
+position = Vector2(39, 42)
+texture = ExtResource("2_18hb2")
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
