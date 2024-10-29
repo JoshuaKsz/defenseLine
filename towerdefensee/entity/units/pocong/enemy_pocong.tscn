@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://b7ylqmf8r5cl8"]
+
+[ext_resource type="Script" path="res://entity/units/pocong/pocong.gd" id="1_bxnkr"]
+[ext_resource type="Texture2D" uid="uid://b1n0oq7u4repd" path="res://entity/units/pocong/pocong.png" id="1_iceen"]
+[ext_resource type="PackedScene" uid="uid://4p0ch7x2f5rv" path="res://entity/specials/health_bar.tscn" id="3_nojwd"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yxsp7"]
+radius = 9.0
+
+[node name="enemy_pocong" type="CharacterBody2D"]
+script = ExtResource("1_bxnkr")
+
+[node name="Pocong" type="Sprite2D" parent="."]
+texture = ExtResource("1_iceen")
+
+[node name="pocong_shape" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_yxsp7")
+
+[node name="HealthBar" parent="." instance=ExtResource("3_nojwd")]
+offset_left = -9.0
+offset_top = -21.0
+offset_right = 9.0
+offset_bottom = -17.0
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+avoidance_enabled = true
+radius = 60.0
+time_horizon_agents = 20.0
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1

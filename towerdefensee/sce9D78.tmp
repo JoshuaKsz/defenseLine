@@ -1,0 +1,134 @@
+[gd_scene load_steps=9 format=3 uid="uid://d0hy8chiafm63"]
+
+[ext_resource type="Script" path="res://GUI/gui.gd" id="1_o8oss"]
+[ext_resource type="Texture2D" uid="uid://nlnsq1eytkkf" path="res://icon.svg" id="1_yyvkk"]
+[ext_resource type="Texture2D" uid="uid://ch205yxa524xw" path="res://GUI/hearth.png" id="2_x6556"]
+[ext_resource type="PackedScene" uid="uid://b7ylqmf8r5cl8" path="res://entity/units/pocong/enemy_pocong.tscn" id="3_cmvd5"]
+[ext_resource type="PackedScene" uid="uid://csieysjxolyy6" path="res://GUI/ui.tscn" id="4_opn5s"]
+[ext_resource type="Texture2D" uid="uid://cnlrkm5qraeqk" path="res://GUI/coin.png" id="4_w8mu4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0ceaj"]
+size = Vector2(1360, 23.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hfk44"]
+size = Vector2(27.0313, 769)
+
+[node name="Scene" type="Node2D"]
+
+[node name="Node2D" type="Node2D" parent="."]
+visible = false
+
+[node name="Node2D2" type="Node2D" parent="."]
+visible = false
+
+[node name="towers" type="Node2D" parent="."]
+
+[node name="GUI" type="Node2D" parent="."]
+position = Vector2(683, 384)
+script = ExtResource("1_o8oss")
+cam_speed = 25.0
+
+[node name="Camera2D" type="Camera2D" parent="GUI"]
+
+[node name="cam_atas" type="Area2D" parent="GUI"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GUI/cam_atas"]
+position = Vector2(0, -379.5)
+shape = SubResource("RectangleShape2D_0ceaj")
+
+[node name="cam_bawah" type="Area2D" parent="GUI"]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="GUI/cam_bawah"]
+position = Vector2(3, 384.25)
+shape = SubResource("RectangleShape2D_0ceaj")
+
+[node name="cam_kiri" type="Area2D" parent="GUI"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GUI/cam_kiri"]
+position = Vector2(-683, 1.5)
+shape = SubResource("RectangleShape2D_hfk44")
+
+[node name="cam_kanan" type="Area2D" parent="GUI"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GUI/cam_kanan"]
+position = Vector2(681.484, -1)
+shape = SubResource("RectangleShape2D_hfk44")
+
+[node name="UI" type="Node2D" parent="GUI"]
+
+[node name="Hearth" type="Sprite2D" parent="GUI/UI"]
+position = Vector2(-649, -358)
+scale = Vector2(0.526667, 0.526667)
+texture = ExtResource("2_x6556")
+
+[node name="coin" type="Sprite2D" parent="GUI/UI"]
+position = Vector2(-480, -359)
+scale = Vector2(0.140809, 0.140809)
+texture = ExtResource("4_w8mu4")
+
+[node name="health_display" type="RichTextLabel" parent="GUI/UI"]
+offset_left = -628.0
+offset_top = -374.0
+offset_right = -502.0
+offset_bottom = -351.0
+text = "100"
+fit_content = true
+scroll_active = false
+
+[node name="money_display" type="RichTextLabel" parent="GUI/UI"]
+offset_left = -454.0
+offset_top = -374.0
+offset_right = -328.0
+offset_bottom = -351.0
+text = "00000"
+fit_content = true
+scroll_active = false
+
+[node name="ui" parent="GUI/UI" instance=ExtResource("4_opn5s")]
+
+[node name="test" type="Node2D" parent="."]
+position = Vector2(1049, 322)
+
+[node name="Icon" type="Sprite2D" parent="test"]
+position = Vector2(337, 232)
+texture = ExtResource("1_yyvkk")
+
+[node name="Icon2" type="Sprite2D" parent="test"]
+position = Vector2(67, 247)
+texture = ExtResource("1_yyvkk")
+
+[node name="Icon3" type="Sprite2D" parent="test"]
+position = Vector2(-273, 368)
+texture = ExtResource("1_yyvkk")
+
+[node name="Icon4" type="Sprite2D" parent="test"]
+position = Vector2(435, 421)
+texture = ExtResource("1_yyvkk")
+
+[node name="Icon5" type="Sprite2D" parent="test"]
+position = Vector2(684, 484)
+texture = ExtResource("1_yyvkk")
+
+[node name="Icon6" type="Sprite2D" parent="test"]
+position = Vector2(837, 604)
+texture = ExtResource("1_yyvkk")
+
+[node name="Icon7" type="Sprite2D" parent="test"]
+position = Vector2(1047, 196)
+texture = ExtResource("1_yyvkk")
+
+[node name="Icon8" type="Sprite2D" parent="test"]
+position = Vector2(738, -44)
+texture = ExtResource("1_yyvkk")
+
+[node name="enemy_pocong" parent="test" instance=ExtResource("3_cmvd5")]
+position = Vector2(-641, -286)
+
+[connection signal="mouse_entered" from="GUI/cam_atas" to="GUI" method="_on_cam_atas_mouse_entered"]
+[connection signal="mouse_exited" from="GUI/cam_atas" to="GUI" method="_on_cam_atas_mouse_exited"]
+[connection signal="mouse_entered" from="GUI/cam_bawah" to="GUI" method="_on_cam_bawah_mouse_entered"]
+[connection signal="mouse_exited" from="GUI/cam_bawah" to="GUI" method="_on_cam_bawah_mouse_exited"]
+[connection signal="mouse_entered" from="GUI/cam_kiri" to="GUI" method="_on_cam_kiri_mouse_entered"]
+[connection signal="mouse_exited" from="GUI/cam_kiri" to="GUI" method="_on_cam_kiri_mouse_exited"]
+[connection signal="mouse_entered" from="GUI/cam_kanan" to="GUI" method="_on_cam_kanan_mouse_entered"]
+[connection signal="mouse_exited" from="GUI/cam_kanan" to="GUI" method="_on_cam_kanan_mouse_exited"]

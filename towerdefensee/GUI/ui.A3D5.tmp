@@ -1,0 +1,63 @@
+[gd_scene load_steps=2 format=3 uid="uid://csieysjxolyy6"]
+
+[ext_resource type="PackedScene" uid="uid://wrcpfasslhbo" path="res://tower.tscn" id="1_whsla"]
+
+[node name="ui" type="CanvasLayer"]
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 1128.0
+offset_top = 1.0
+offset_right = 1366.0
+offset_bottom = 767.0
+mouse_filter = 2
+
+[node name="FlowContainer" type="FlowContainer" parent="Panel"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 23.0
+offset_right = 203.0
+offset_bottom = 727.0
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+
+[node name="Tower" parent="Panel/FlowContainer" instance=ExtResource("1_whsla")]
+layout_mode = 2
+
+[node name="Tower2" parent="Panel/FlowContainer" instance=ExtResource("1_whsla")]
+layout_mode = 2
+
+[node name="Tower3" parent="Panel/FlowContainer" instance=ExtResource("1_whsla")]
+layout_mode = 2
+
+[node name="Tower4" parent="Panel/FlowContainer" instance=ExtResource("1_whsla")]
+layout_mode = 2
+
+[node name="Tower5" parent="Panel/FlowContainer" instance=ExtResource("1_whsla")]
+layout_mode = 2
+
+[node name="Tower6" parent="Panel/FlowContainer" instance=ExtResource("1_whsla")]
+layout_mode = 2
+
+[node name="Tower7" parent="Panel/FlowContainer" instance=ExtResource("1_whsla")]
+layout_mode = 2
+
+[node name="Tower8" parent="Panel/FlowContainer" instance=ExtResource("1_whsla")]
+layout_mode = 2
+
+[node name="Tower9" parent="Panel/FlowContainer" instance=ExtResource("1_whsla")]
+layout_mode = 2
+
+[node name="Tower10" parent="Panel/FlowContainer" instance=ExtResource("1_whsla")]
+layout_mode = 2
+
+[node name="Tower11" parent="Panel/FlowContainer" instance=ExtResource("1_whsla")]
+layout_mode = 2
+
+[node name="Tower12" parent="Panel/FlowContainer" instance=ExtResource("1_whsla")]
+layout_mode = 2
+
+[node name="Tower13" parent="Panel/FlowContainer" instance=ExtResource("1_whsla")]
+layout_mode = 2
+
+[node name="Tower14" parent="Panel/FlowContainer" instance=ExtResource("1_whsla")]
+layout_mode = 2
